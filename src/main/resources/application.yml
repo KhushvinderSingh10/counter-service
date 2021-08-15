@@ -1,0 +1,13 @@
+logging:
+  level:
+    root: INFO
+    org.springframework: INFO
+    com.au.pei.express: DEBUG
+
+server:
+  port: 8180
+  
+basic:
+  auth:
+    username: optus
+    pwd: candidates

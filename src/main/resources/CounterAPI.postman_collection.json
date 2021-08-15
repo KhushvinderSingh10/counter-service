@@ -1,0 +1,116 @@
+{
+	"info": {
+		"_postman_id": "5aeff6a0-7dd2-4cfd-9d4d-375bf929d016",
+		"name": "CounterAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "TopWordsRequest",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "candidates",
+						"username": "optus"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8180/counter-api/top/5"
+			},
+			"response": []
+		},
+		{
+			"name": "TopWordsRequestWithNegativeValue",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "candidates",
+						"username": "optus"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8180/counter-api/top/-2"
+			},
+			"response": []
+		},
+		{
+			"name": "SearchWordsRequest",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "candidates",
+						"username": "optus"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"searchText\": [\r\n        \"Duis\",\r\n        \"Sed\",\r\n        \"Donec\",\r\n        \"Augue\",\r\n        \"Pellentesque\",\r\n        \"123\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8180/counter-api/search"
+			},
+			"response": []
+		},
+		{
+			"name": "Error:SearchWordsNullRequest",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"username": "optus",
+						"password": "candidates"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"searchText\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8180/counter-api/search"
+			},
+			"response": []
+		},
+		{
+			"name": "SearchWordsRequestwithMultipleNull",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"username": "optus",
+						"password": "candidates"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"searchText\": [\r\n        \"Duis\",\r\n        \"Sed\",\r\n        \"Donec\",\r\n        \"Augue\",\r\n        \"Pellentesque\",\r\n        \"123\",\r\n         null,\r\n         null,\r\n         null\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8180/counter-api/search"
+			},
+			"response": []
+		}
+	]
+}
